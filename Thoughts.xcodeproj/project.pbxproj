@@ -14,6 +14,14 @@
 		C714BDD7280D046900DE6566 /* ThoughtsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C714BDD6280D046900DE6566 /* ThoughtsTests.swift */; };
 		C714BDE1280D046900DE6566 /* ThoughtsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C714BDE0280D046900DE6566 /* ThoughtsUITests.swift */; };
 		C714BDE3280D046900DE6566 /* ThoughtsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C714BDE2280D046900DE6566 /* ThoughtsUITestsLaunchTests.swift */; };
+		C714BDF1280D05DB00DE6566 /* AppStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C714BDF0280D05DB00DE6566 /* AppStateManager.swift */; };
+		C714BDF3280D0AB900DE6566 /* NewGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C714BDF2280D0AB900DE6566 /* NewGame.swift */; };
+		C714BDF5280D0AE300DE6566 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C714BDF4280D0AE300DE6566 /* GameView.swift */; };
+		C714BDF8280D0D7400DE6566 /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C714BDF7280D0D7400DE6566 /* SectionView.swift */; };
+		C714BDFB280D0FE100DE6566 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C714BDFA280D0FE100DE6566 /* GameViewModel.swift */; };
+		C714BDFE280D113800DE6566 /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C714BDFD280D113800DE6566 /* GroupView.swift */; };
+		C714BE01280D12B800DE6566 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = C714BE00280D12B800DE6566 /* Game.swift */; };
+		C714BE03280D13EB00DE6566 /* Thought.swift in Sources */ = {isa = PBXBuildFile; fileRef = C714BE02280D13EA00DE6566 /* Thought.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +52,14 @@
 		C714BDDC280D046900DE6566 /* ThoughtsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThoughtsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C714BDE0280D046900DE6566 /* ThoughtsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtsUITests.swift; sourceTree = "<group>"; };
 		C714BDE2280D046900DE6566 /* ThoughtsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C714BDF0280D05DB00DE6566 /* AppStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateManager.swift; sourceTree = "<group>"; };
+		C714BDF2280D0AB900DE6566 /* NewGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewGame.swift; path = Thoughts/View/NewGame.swift; sourceTree = SOURCE_ROOT; };
+		C714BDF4280D0AE300DE6566 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameView.swift; path = Thoughts/View/GameView.swift; sourceTree = SOURCE_ROOT; };
+		C714BDF7280D0D7400DE6566 /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
+		C714BDFA280D0FE100DE6566 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		C714BDFD280D113800DE6566 /* GroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupView.swift; sourceTree = "<group>"; };
+		C714BE00280D12B800DE6566 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		C714BE02280D13EA00DE6566 /* Thought.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thought.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +110,10 @@
 		C714BDC4280D046600DE6566 /* Thoughts */ = {
 			isa = PBXGroup;
 			children = (
+				C714BDFF280D12A900DE6566 /* Model */,
+				C714BDF9280D0FD600DE6566 /* ViewModel */,
+				C714BDF6280D0D4600DE6566 /* View */,
+				C714BDEF280D047500DE6566 /* Manager */,
 				C714BDC5280D046600DE6566 /* ThoughtsApp.swift */,
 				C714BDC7280D046700DE6566 /* ContentView.swift */,
 				C714BDC9280D046900DE6566 /* Assets.xcassets */,
@@ -125,6 +145,50 @@
 				C714BDE2280D046900DE6566 /* ThoughtsUITestsLaunchTests.swift */,
 			);
 			path = ThoughtsUITests;
+			sourceTree = "<group>";
+		};
+		C714BDEF280D047500DE6566 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				C714BDF0280D05DB00DE6566 /* AppStateManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		C714BDF6280D0D4600DE6566 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C714BDFC280D112800DE6566 /* Shared */,
+				C714BDF2280D0AB900DE6566 /* NewGame.swift */,
+				C714BDF4280D0AE300DE6566 /* GameView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C714BDF9280D0FD600DE6566 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C714BDFA280D0FE100DE6566 /* GameViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C714BDFC280D112800DE6566 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				C714BDF7280D0D7400DE6566 /* SectionView.swift */,
+				C714BDFD280D113800DE6566 /* GroupView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		C714BDFF280D12A900DE6566 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C714BE00280D12B800DE6566 /* Game.swift */,
+				C714BE02280D13EA00DE6566 /* Thought.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +321,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C714BDF3280D0AB900DE6566 /* NewGame.swift in Sources */,
+				C714BE03280D13EB00DE6566 /* Thought.swift in Sources */,
+				C714BE01280D12B800DE6566 /* Game.swift in Sources */,
 				C714BDC8280D046700DE6566 /* ContentView.swift in Sources */,
+				C714BDFE280D113800DE6566 /* GroupView.swift in Sources */,
+				C714BDF8280D0D7400DE6566 /* SectionView.swift in Sources */,
+				C714BDF1280D05DB00DE6566 /* AppStateManager.swift in Sources */,
 				C714BDC6280D046600DE6566 /* ThoughtsApp.swift in Sources */,
+				C714BDF5280D0AE300DE6566 /* GameView.swift in Sources */,
+				C714BDFB280D0FE100DE6566 /* GameViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
