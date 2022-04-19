@@ -19,25 +19,30 @@ struct GameView: View {
     @State private var text = ""
     
     var body: some View {
-        Group {
-            SectionView(
-                title: "Create Thought",
-                description: nil,
-                content: {
-                    VStack {
-                        List(self.viewModel.state.thoughts) { thought in
-                            Text(thought.content)
-            //                Grouping(title: "Buttons", icon: "capsule", content: { Text(thought.content) })
+            
+            VStack {
+                List(self.viewModel.state.thoughts) { thought in
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 5, style: .continuous)
+                            .fill(.white)
+                            .shadow(radius: 10)
+                        VStack {
+                            Text(thought.content).font(.largeTitle)
+                                .foregroundColor(.black)
+                            if thought.afterthought != nil {
+                                Text(thought.afterthought!).font(.title)
+                                    .foregroundColor(.gray)
+                            }
                         }
-                        Spacer()
-                        TextField("Placeholder", text: $text)
-                        Button(action: { self.viewModel.add(content: text)}) {
-                            Text("Submit")
-                        }
-                    }
+                    }.padding(20)
+                     .multilineTextAlignment(.center)
                 }
-            )
-
-        }
+                
+                Spacer()
+                TextField("Placeholder", text: $text)
+                Button(action: { self.viewModel.add(content: text)}) {
+                    Text("Submit")
+                }
+            }
     }
 }

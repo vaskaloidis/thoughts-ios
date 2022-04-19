@@ -12,23 +12,33 @@ class GameViewModel: ObservableObject {
     
     var sessionType: SessionType
     
-    
     init(sessionType: SessionType = .normal) {
         self.sessionType = sessionType
+        self.state.game = Game()
     }
     
     @Published private(set) var state = State() {
       willSet {
         self.objectWillChange.send()
+          AppStateManager.shared.currentGame = self.state.game
       }
     }
     
     struct State {
         var thoughts: [Thought] = []
+        var game: Game?
     }
     
     func add(content: String) {
         self.state.thoughts.append(Thought(content: content))
+        self.state.game?.thoughts.append(Thought(content: content))
+    }
+    
+    func complete() {
+        if let game = self.state.game {
+            AppStateManager.shared.sessions.append(game)
+        }
+        AppStateManager.shared.currentGame = nil
     }
     
     

@@ -15,7 +15,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             #if os(iOS) || os(watchOS) || os(tvOS)
-            list.navigationBarTitle("SwiftUI")
+            list.navigationBarTitle("Thoughts")
             Text("Select a group")
             #elseif os(OSX)
             list.listStyle(SidebarListStyle())
@@ -28,8 +28,42 @@ struct ContentView: View {
     
     
     var list: some View {
-        List {
-            Grouping(title: "New Game", icon: "capsule", content: { NewGame() })
+        VStack{
+            Grouping(title: "New Game", icon: "plus", content: { NewGame() })
+            List(AppStateManager.shared.sessions) { session in
+                ZStack {
+                    RoundedRectangle(cornerRadius: 5, style: .continuous)
+                        .fill(.white)
+                        .shadow(radius: 10)
+                    HStack {
+                        Image(systemName: "bolt")
+                            .font(.system(size: 100))
+                            .foregroundColor(.blue)
+                            .shadow(color: .gray, radius: 10, x: 0, y: 10)
+                        VStack {
+                            if let title = session.title {
+                                Label(title, systemImage: "paperplane")
+                                    .font(.title)
+                                    .labelStyle(.titleAndIcon)
+                            }
+                            Text(session.createdAtPretty())
+                                .font(.callout)
+                                .multilineTextAlignment(.center)
+                                .foregroundColor(.gray)
+                                .lineLimit(3)
+                            
+                            Text("\(session.thoughts.count)")
+                                .font(.caption)
+                                .fontWeight(.black)
+                                .padding(5)
+                                .background(Color.green)
+                                .clipShape(Circle())
+                                .foregroundColor(.white)
+                        }
+                    }
+                }.padding(20)
+                 .multilineTextAlignment(.center)
+            }
         }
     }
     

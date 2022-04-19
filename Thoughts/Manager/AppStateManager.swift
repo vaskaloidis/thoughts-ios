@@ -43,6 +43,8 @@ class AppStateManager: ObservableObject {
       }
     }
     
+    @Published var sessions: [Game] = []
+    @Published var currentGame: Game? = nil
     @Published var shouldShowActionSheet = false
     @Published private var oldSelectedItem: AppState = .home
     @Published var resetNavigationID = UUID()

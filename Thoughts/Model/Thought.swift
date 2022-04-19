@@ -12,17 +12,18 @@ class Thought: Identifiable {
     var id = UUID()
     var content: String
     var creatdAt: Date = Date()
-    var versions: [String] = []
+    var afterthought: String?
+    var afterthoughts: [String] = []
     
     
     init(content: String) {
         self.content = content
-        self.versions.append(content)
+        self.afterthoughts.append(content)
     }
     
-    func addNew(text: String) {
-        self.content = text
-        self.versions.append(content)
+    func addAfterthought(text: String) {
+        self.afterthoughts.append(content)
+        self.afterthought = text
     }
     
 }
